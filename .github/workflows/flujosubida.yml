@@ -1,0 +1,17 @@
+name: Integración y entrega continua
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: Mensaje de ejecución
+        run: echo "Workflow ejecutado automáticamente por un push en la rama main."
