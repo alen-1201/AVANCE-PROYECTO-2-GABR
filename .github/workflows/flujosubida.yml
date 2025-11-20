@@ -8,10 +8,30 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      nombres: "Glen Alen"
+      apellidos: "Bocanegra Reyes"
+      edad: "35"
+      version_proyecto: "3.0"
+      
     steps:
-      - name: Checkout del repositorio
-        uses: actions/checkout@v3
+      - name: Presentación
+        run: |
+          echo "Nombres: $nombres"
+          echo "Apellidos: $apellidos"
+          echo "Edad: $edad"
 
-      - name: Mensaje de ejecución
-        run: echo "Workflow ejecutado automáticamente por un push en la rama main."
+      - name: Gatos Generales
+        run: echo "Carrera de Ingeniería de Sistemas"
+
+      - name: Variables de entorno secretas
+        run: |
+          echo "user: ${{ secrets.user }}"
+          echo "password: ${{ secrets.password }}"
+          
+      - name: variables abiertas
+        run: |
+          echo "nombres: $nombres"
+          echo "apellidos: $apellidos"
+          echo "edad: $edad"
+          echo "version_proyecto: $version_proyecto"
